@@ -1,20 +1,18 @@
 import React from 'react';
-import { Element } from 'react-scroll';
 import { ChevronDoubleDownIcon } from '@heroicons/react/24/solid';
-import profileImage from './assets/profile-image.jpg'; // 프로필 이미지 경로를 적절히 수정하세요
 
-const App: React.FC = () => {
+const Resume: React.FC = () => {
   const skills = [
     { category: "Backend", items: ["Java", "Spring Boot", "Spring MVC", "Spring Data JPA", "Spring Security"] },
-    { category: "Database", items: ["MySQL", "PostgreSQL", "Redis", "MongoDB"] },
-    { category: "DevOps", items: ["Git", "GitHub", "Docker", "Kubernetes", "AWS (EC2, S3, RDS, Lambda)"] },
+    { category: "Database", items: ["MySQL", "Redis"] },
+    { category: "DevOps", items: ["Git", "GitHub", "Docker", "AWS (EC2, S3, RDS, Lambda)"] },
     { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "React"] },
     { category: "Others", items: ["RESTful API Design", "Microservices Architecture", "Test-Driven Development (TDD)"] }
   ];
 
   const projects = [
     {
-      title: "SecondInning: AI 중고거래 플랫폼",
+      title: "SecondInning: AI 기반 중고거래 플랫폼",
       description: "Spring Boot와 React를 사용한 AI 기반 중고거래 웹 애플리케이션",
       achievements: [
         "실시간 채팅 기능 구현으로 사용자 간 커뮤니케이션 20% 향상",
@@ -23,19 +21,7 @@ const App: React.FC = () => {
       ],
       technologies: ["Spring Boot", "React", "MySQL", "Docker", "AWS"],
       githubLink: "https://github.com/yourusername/secondinning",
-      liveDemo: "https://secondinning-demo.herokuapp.com"
-    },
-    {
-      title: "DevLog: 개발자 블로그 플랫폼",
-      description: "개발자들을 위한 기술 블로그 공유 및 커뮤니티 플랫폼",
-      achievements: [
-        "SEO 최적화로 검색 엔진 노출도 40% 증가",
-        "마크다운 에디터 구현으로 사용자 작성 시간 30% 단축",
-        "태그 기반 추천 시스템으로 사용자 체류 시간 25% 증가"
-      ],
-      technologies: ["Node.js", "Express", "MongoDB", "Vue.js", "Nginx"],
-      githubLink: "https://github.com/yourusername/devlog",
-      liveDemo: "https://devlog-platform.com"
+      liveDemo: "https://54.180.243.156.nip.io/"
     }
   ];
 
@@ -43,13 +29,13 @@ const App: React.FC = () => {
       <div className="flex min-h-screen bg-gray-100">
         {/* 왼쪽 사이드바 */}
         <div className="w-1/4 bg-blue-600 text-white p-6 fixed h-full overflow-auto">
-          <img src={profileImage} alt="이승희" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"/>
+          <img src="/api/placeholder/128" alt="이승희" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"/>
           <h1 className="text-2xl font-bold mb-2 text-center">이승희</h1>
           <p className="text-xl mb-4 text-center">백엔드 개발자</p>
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-2">연락처</h2>
-            <p className="text-sm">이메일: your.email@example.com</p>
-            <p className="text-sm">전화번호: 010-1234-5678</p>
+            <p className="text-sm">이메일: seungjang93@gmail.com</p>
+            <p className="text-sm">전화번호: 010-4100-2147</p>
           </div>
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-2">링크</h2>
@@ -70,7 +56,7 @@ const App: React.FC = () => {
 
         {/* 오른쪽 주요 내용 */}
         <div className="w-3/4 ml-auto p-6">
-          <Element name="skills" className="mb-12">
+          <div id="skills" className="mb-12">
             <h2 className="text-3xl font-bold mb-6">기술 스택</h2>
             {skills.map((skillGroup, index) => (
                 <div key={index} className="mb-6">
@@ -84,9 +70,9 @@ const App: React.FC = () => {
                   </div>
                 </div>
             ))}
-          </Element>
+          </div>
 
-          <Element name="projects" className="mb-12">
+          <div id="projects" className="mb-12">
             <h2 className="text-3xl font-bold mb-6">프로젝트</h2>
             {projects.map((project, index) => (
                 <div key={index} className="mb-8 bg-white p-6 rounded-lg shadow-md">
@@ -112,10 +98,10 @@ const App: React.FC = () => {
                   </div>
                 </div>
             ))}
-          </Element>
+          </div>
         </div>
       </div>
   );
 };
 
-export default App;
+export default Resume;

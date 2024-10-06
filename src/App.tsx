@@ -4,23 +4,28 @@ import { ChevronDoubleDownIcon } from '@heroicons/react/24/solid';
 const Resume: React.FC = () => {
   const skills = [
     { category: "Backend", items: ["Java", "Spring Boot", "Spring MVC", "Spring Data JPA", "Spring Security"] },
-    { category: "Database", items: ["MySQL", "Redis"] },
-    { category: "DevOps", items: ["Git", "GitHub", "Docker", "AWS (EC2, S3, RDS, Lambda)"] },
+    { category: "Database", items: ["MySQL", "PostgreSQL", "Redis", "MongoDB"] },
+    { category: "DevOps", items: ["Git", "GitHub", "Docker", "Kubernetes", "AWS (EC2, S3, RDS, Lambda)"] },
     { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "React"] },
     { category: "Others", items: ["RESTful API Design", "Microservices Architecture", "Test-Driven Development (TDD)"] }
   ];
 
   const projects = [
     {
-      title: "SecondInning: AI 기반 중고거래 플랫폼",
-      description: "Spring Boot와 React를 사용한 AI 기반 중고거래 웹 애플리케이션",
+      title: "SecondInning: AI 중고거래 플랫폼",
+      description: "교육 기관에서 진행한 팀 프로젝트로, Spring Boot와 React를 사용하여 AI 중고거래 웹 애플리케이션을 개발하였습니다.",
       achievements: [
-        "실시간 채팅 기능 구현으로 사용자 간 커뮤니케이션 20% 향상",
-        "AI 기반 가격 추천 시스템 도입으로 거래 성사율 15% 증가",
-        "마이크로서비스 아키텍처 도입으로 시스템 확장성 개선 및 배포 시간 50% 단축"
+        "Spring Boot를 사용하여 백엔드 API를 개발하고 React로 프론트엔드를 구현",
+        "MySQL 데이터베이스를 사용하여 상품 및 사용자 정보 관리",
+        "채팅 기능을 구현하여 사용자 간 커뮤니케이션 활성화",
+        "Bucket4j를 활용하여 API 호출 횟수를 제한함으로써 서버 부하 관리",
+        "JWT를 사용하여 stateless한 사용자 인증 시스템을 구현하여 서버 부담 감소",
+        "회원 관련 CRUD 기능 및 프론트엔드 개발을 통해 사용자 편의성 향상",
+        "AWS를 활용한 애플리케이션 배포 및 RDS를 통한 데이터베이스 관리로 확장성 및 가용성 확보",
+        "Git과 Github를 활용한 버전 관리 및 협업"
       ],
-      technologies: ["Spring Boot", "React", "MySQL", "Docker", "AWS"],
-      githubLink: "https://github.com/yourusername/secondinning",
+      technologies: ["Spring Boot", "React", "MySQL", "AWS"],
+      githubLink: "https://github.com/LLSNsssz/Play-Baseballv2",
       liveDemo: "https://54.180.243.156.nip.io/"
     }
   ];
@@ -78,7 +83,7 @@ const Resume: React.FC = () => {
                 <div key={index} className="mb-8 bg-white p-6 rounded-lg shadow-md">
                   <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-4">{project.description}</p>
-                  <h4 className="text-lg font-semibold mb-2">주요 성과:</h4>
+                  <h4 className="text-lg font-semibold mb-2">주요 내용:</h4>
                   <ul className="list-disc list-inside text-sm text-gray-700 mb-4">
                     {project.achievements.map((achievement, achievementIndex) => (
                         <li key={achievementIndex}>{achievement}</li>
